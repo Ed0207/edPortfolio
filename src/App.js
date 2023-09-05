@@ -7,21 +7,34 @@ import MyHeader from './components/MyHeader';
 
 var data
 
+// fetch github repository information
 async function searchRepo(){
 
-  axios({
+  let response = await axios({
     method: "get",
     url: 'https://api.github.com/users/ed0207/repos',
-  }).then(res => {
-    console.log("testing")
-    data = res.data
   })
+
+  return response
 }
 
 
 function App() {
 
-  const repos = searchRepo()
+  let [loadState, setTextState] = useState("Welcome to my portfolio")
+
+
+  let repos = searchRepo()
+
+
+  repos.then(result => {
+
+    for(let i = 0; i < 5; i++){
+      console.log(result.data[i])
+    }
+
+    setTextState("loading complete")
+  })
 
   return (
     <div className="App">
@@ -29,7 +42,7 @@ function App() {
         <Navbar name="Edward's portfolio"/>
       </nav>
       <header>
-        <MyHeader text="Welcome to my portfolio"/>
+        <MyHeader text={loadState}/>
       </header>
     </div>
   );
