@@ -3,12 +3,12 @@ import './App.css';
 import axios, {isCancel, AxiosError} from 'axios';
 import {useState} from 'react';
 import Navbar from './components/MyNavbar';
-import MyHeader from './components/MyHeader';
+import Hero from './components/Hero';
 
-var data
+
 
 // fetch github repository information
-async function searchRepo(){
+async function getRepo(){
 
   let response = await axios({
     method: "get",
@@ -21,10 +21,10 @@ async function searchRepo(){
 
 function App() {
 
-  let [loadState, setTextState] = useState("Welcome to my portfolio")
+  let [loadState, setTextState] = useState("loading...")
 
 
-  let repos = searchRepo()
+  let repos = getRepo()
 
 
   repos.then(result => {
@@ -33,18 +33,18 @@ function App() {
       console.log(result.data[i])
     }
 
-    setTextState("loading complete")
+    setTextState("Welcome")
   })
 
   return (
-    <div className="App">
-      <nav>
-        <Navbar name="Edward's portfolio"/>
-      </nav>
-      <header>
-        <MyHeader text={loadState}/>
-      </header>
-    </div>
+      <div className="App">
+        <nav>
+          <Navbar name="Edward's portfolio"/>
+        </nav>
+        <header>
+          <Hero text={loadState}/>
+        </header>
+      </div>
   );
 }
 
