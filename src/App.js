@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import axios, {isCancel, AxiosError} from 'axios';
 import {useState} from 'react';
 import Navbar from './components/MyNavbar';
