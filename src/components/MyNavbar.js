@@ -5,7 +5,6 @@ function MyNavbar (props) {
         <div>
             <nav className="navbar navbar-dark bg-dark">
                     <a className="navbar-brand mr-auto p-2" href="#">{props.name}</a>
-
             </nav>
         </div>
     );
