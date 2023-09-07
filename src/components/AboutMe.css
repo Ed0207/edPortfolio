@@ -1,0 +1,21 @@
+.aboutme{
+    background-color: magenta;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.headshot{
+    width: 200px;
+    margin-right: auto;
+    background-color: orange;
+    display:inline-block;
+}
+
+.aboutmeInfo{
+    width: 800px;
+    margin-left: auto;
+    height: 300px;
+    background-color: purple;
+    display: inline-block;
+}

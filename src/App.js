@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios, {isCancel, AxiosError} from 'axios';
+import axios from 'axios';
 import {useState} from 'react';
 import Navbar from './components/MyNavbar';
 import Hero from './components/Hero';
-
+import AboutMe from './components/AboutMe';
 
 
 // fetch github repository information
@@ -37,12 +37,9 @@ function App() {
 
   return (
       <div className="App">
-        <nav>
-          <Navbar name="Edward's portfolio"/>
-        </nav>
-        <header>
-          <Hero text={loadState}/>
-        </header>
+        <Navbar name="Edward's portfolio"/>
+        <Hero text={loadState}/>
+        <AboutMe/>
       </div>
   );
 }
