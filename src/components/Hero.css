@@ -24,9 +24,12 @@
 
 .hero-content{
     color: white;
-    position: absolute;
-    transform: translate(-50%);
-    top: 30%;
-    left: 50%;
+    position: relative;
+    transform: translate(0%, -200%);
     text-align: center;
+}
+
+.header-wraper{
+    background-color: gray;
+    height: fit-content;
 }

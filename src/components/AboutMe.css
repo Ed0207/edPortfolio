@@ -1,21 +1,23 @@
 .aboutme{
-    background-color: magenta;
     display: block;
+    background-color: gray;
+}
+
+.aboutme h2{
     text-align: center;
-    width: 100%;
 }
 
 .headshot{
-    width: 200px;
-    margin-right: auto;
-    background-color: orange;
-    display:inline-block;
+    margin: 5vw;
+    border-radius: 10px;
+    max-width: 20vw;
+    max-height: 30vw;
+    min-width: 1px;
+    min-height: 1px;
 }
 
-.aboutmeInfo{
-    width: 800px;
-    margin-left: auto;
-    height: 300px;
-    background-color: purple;
+.aboutmeText{
+    text-align: center;
+    margin: 5vw;
     display: inline-block;
 }

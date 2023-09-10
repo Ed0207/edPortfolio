@@ -1,13 +1,4 @@
-.App {
-  text-align: center;
-}
-
-
-
-
-
-
-
 .App{
+  display: block;
   background-color: magenta;
 }

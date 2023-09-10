@@ -10,7 +10,7 @@ function MyHeader(props){
     return (
         <div className='header-wraper' id="top">
                 <div className='img-filter'>
-                    <img className='hero-img' alt="generic programming background" src={img1} height={300}/>
+                    <img className='hero-img' alt="generic programming background" src={img1} height={350}/>
                 </div>
                 <div className='hero-content'>
                     <h1>{props.text}</h1>
