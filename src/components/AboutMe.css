@@ -1,24 +1,22 @@
 .aboutme{
+    align-items: top;
     text-align: center;
     display: block;
     background-color: gray;
 }
 
-.aboutme h2{
-    text-align: center;
-}
 
 .headshot{
     margin: 5vw;
-    border-radius: 10px;
+    margin-top: 0px;
+    padding: 0;
+    border-radius: 15px;
     max-width: 200px;
     max-height: 300px;
-    min-width: 1px;
-    min-height: 1px;
+    object-fit: cover;
 }
 
 .aboutmeText{
-    text-align: center;
     max-width: 60vw;
     margin: 5vw;
     display: inline-block;

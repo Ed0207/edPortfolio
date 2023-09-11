@@ -4,6 +4,7 @@ import {useState} from 'react';
 import Navbar from './components/MyNavbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
+import ProjectCard from './components/ProjectCard';
 
 
 // fetch github repository information
@@ -21,25 +22,31 @@ async function getRepo(){
 function App() {
 
   let [loadState, setTextState] = useState("loading...")
+  let [repos, setRepos] = useState([
+    [{name: "my project", html_url:"https://github.com/Ed0207/edPortfolio"}],
+    [{name: "my project", html_url:"https://github.com/Ed0207/edPortfolio"}],
+    [{name: "my project", html_url:"https://github.com/Ed0207/edPortfolio"}],
+    [{name: "my project", html_url:"https://github.com/Ed0207/edPortfolio"}],
+    [{name: "my project", html_url:"https://github.com/Ed0207/edPortfolio"}]
+  ])
 
+ 
+  let temp = getRepo()
 
-  let repos = getRepo()
+  temp.then(result => {
 
-
-  repos.then(result => {
-
-    for(let i = 0; i < 5; i++){
-      console.log(result.data[i])
-    }
-
+    setRepos(result.data)
     setTextState("Welcome")
+    
   })
+
 
   return (
       <div className="App">
         <Navbar name="Edward's portfolio"/>
         <Hero text={loadState}/>
         <AboutMe/>
+        <ProjectCard repos={repos}/>
       </div>
   );
 }
