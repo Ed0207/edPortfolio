@@ -3,5 +3,6 @@
 }
 
 .ProjectCard a{
-    display: block;
+    margin-left: 1vw;
+    display: inline-block;
 }

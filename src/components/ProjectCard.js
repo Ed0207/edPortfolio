@@ -1,30 +1,53 @@
 import React from 'react'
+import axios from 'axios';
+import {useState} from 'react';
 import "./ProjectCard.css"
 
-function ProjectCard(Props){
 
-    let repos = Props.repos
+let DISPLAYCOUNT = 5;
 
-    // sort by push_at
+// fetch github repository information
+async function getRepo(){
+
+    let response = await axios({
+      method: "get",
+      url: 'https://api.github.com/users/ed0207/repos',
+    })
+  
+    return response
+  }
+
+function ProjectCard(){
+
+    let [repos, setRepos] = useState([
+        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
+        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
+        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
+        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
+        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []]])
+
+    const displayComponent = []
+
+    let process = getRepo()
+
+    process.then(result =>{
+        setRepos(result.data)
+    })
+
+
+    for(let i = 0; i < DISPLAYCOUNT; i++){
+        displayComponent.push(
+            <a className='cards' href={repos[i].html_url}>
+            Name: {repos[i].name} <br></br>
+            Language: {repos[i].language}<br></br> 
+            Description: {repos[i].description}
+            </a>
+        )
+    }
 
     return(<div className='ProjectCard'>
         <h4>Recent Projects: </h4>
-        <a href={repos[0].html_url}>
-            {repos[0].name}
-        </a>
-        <a href={repos[0].html_url}>
-            {repos[1].name}
-        </a>
-        <a href={repos[0].html_url}>
-            {repos[2].name}
-        </a>
-        <a href={repos[0].html_url}>
-            {repos[3].name}
-        </a>
-        <a href={repos[0].html_url}>
-            {repos[4].name}
-        </a>
-        
+        {displayComponent}
     </div>);
 }
 

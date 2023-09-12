@@ -7,6 +7,7 @@
 
 
 .headshot{
+    vertical-align: top;
     margin: 5vw;
     margin-top: 0px;
     padding: 0;
@@ -21,3 +22,4 @@
     margin: 5vw;
     display: inline-block;
 }
+

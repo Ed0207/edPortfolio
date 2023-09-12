@@ -20,6 +20,8 @@ This is my personal project created for the purposes of
 - photo with effect (?)
 
 
+### Potential Problems:
+- 1. when using useState in the promise.then() callback, function continuously loop itself with the example of continous console.log in the console despite no loop presence, draining up device resource
 
 
 ** This project loosely follow other's tutorial:
