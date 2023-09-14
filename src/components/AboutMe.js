@@ -4,10 +4,6 @@ import headshot from "./../assets/ed-selfie.jpg"
 
 function AboutMe(props){
 
-    for(let i = 0; i < 5; i++){
-        
-    }
-
     return(
         <div className='aboutme'>
             <h2>Aboue Me</h2>

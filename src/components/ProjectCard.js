@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import "./ProjectCard.css"
 
 
-let DISPLAYCOUNT = 5;
+let PROJECTCOUNT = 6;
 
 function repoSort(repos){
 
@@ -15,7 +15,7 @@ function repoSort(repos){
     }
 
     // Implementing bubble sort
-    // subject to change due 
+    // subject to change for any O(n log n) sort
     for(let i = 0; i < repos.length; i++){
         for(let j = i+1; j < repos.length; j++){
             let y1 = parseInt(repos[i].pushed_at.substring(0,4))
@@ -47,61 +47,88 @@ function repoSort(repos){
 }
 
 
-// fetch github repository information
-async function getRepo(){
+// old implementation (cuases infinite render loop)
+// // fetch github repository information
+// async function getRepo(){
 
-    let response = await axios({
-      method: "get",
-      url: 'https://api.github.com/users/ed0207/repos',
-    })
+//     let response = await axios({
+//       method: "get",
+//       url: 'https://api.github.com/users/ed0207/repos',
+//     })
   
-    return response
-  }
+//     return response
+//   }
 
 
 function ProjectCard(){
 
-    let [repos, setRepos] = useState([
-        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
-        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
-        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
-        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []],
-        [{name: "project name", html_url:"https://github.com/Ed0207/edPortfolio", description:"Description", language:"Language", pushed_at:"Null"}, []]])
+    let [cardComponents, setComponent] = useState([])
 
-    const displayComponent = []
 
-    let process = getRepo()
+    // let process = getRepo()
+    // process.then(result =>{
+    //     let sortedData = repoSort(result.data)
+    //     setRepos(sortedData)
+    // })
 
-    process.then(result =>{
-        let sortedData = repoSort(result.data)
-        setRepos(sortedData)
-    })
-
-    // use effect stops 
+    
+    // empty array to avoid infinite render loop (nothing can be triggered)
     useEffect(() =>{
-        // fetch();
-        console.log("rendering repository item")
+
+        // fetching repsitory information
+        axios({method: "get", url: 'https://api.github.com/users/ed0207/repos'}).then((response) =>{
+
+        let displayComponent = []
+
+            if(response.status === 200){
+                    
+                let repos = response.data
+
+                repos = repoSort(repos)
+                
+                // Array length check
+                if(PROJECTCOUNT > repos.length){
+                    PROJECTCOUNT = repos.length
+                }
+
+                // pushing render component
+                for(let i = 0; i < PROJECTCOUNT; i++){
+                    
+                    if(Object.is(repos[i].language, null)){
+                        repos[i].language = "?"
+                    }
+
+                    displayComponent.push(
+                        <a className='cards' href={repos[i].html_url}>
+                        Name: {repos[i].name} <br></br>
+                        Language: {repos[i].language}<br></br> 
+                        Description: {repos[i].description}<br></br>
+                        Last pushed at: {repos[i].pushed_at.substring(0,10)} <br></br>
+                        </a>
+                    )
+                }
+
+                setComponent(displayComponent)
+
+                console.log("rendering repository item")
+                console.log(repos)
+
+            }else{
+                displayComponent.push(
+                    <h3 color='red'>Error: Github request fail</h3>
+                )
+
+                setComponent(cardComponents)
+            }
+        }).catch(() => {
+            setComponent(<h3 color='red'>Error: network failure</h3>)
+        })
     },[])
 
 
-    for(let i = 0; i < DISPLAYCOUNT; i++){
-        
-        if(Object.is(repos[i].language, null)){
-            repos[i].language = "?"
-        }
-
-        displayComponent.push(
-            <a className='cards' href={repos[i].html_url}>
-            Name: {repos[i].name} <br></br>
-            Language: {repos[i].language}<br></br> 
-            Description: {repos[i].description}<br></br>
-            </a>
-        )
-    }
-
     return(<div className='ProjectCard'>
         <h4>Recent Projects </h4>
-        {displayComponent}
+        {cardComponents}
     </div>);
 }
 

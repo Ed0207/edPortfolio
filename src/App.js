@@ -3,6 +3,7 @@ import Navbar from './components/MyNavbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import ProjectCard from './components/ProjectCard';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Hero text={"Welcome"}/>
         <AboutMe/>
         <ProjectCard/>
+        <Footer/>
       </div>
   );
 }
