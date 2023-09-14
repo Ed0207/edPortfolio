@@ -1,7 +1,7 @@
 .ProjectCard{
     color: white;
     text-align: center;
-    background-color: darkblue;
+    background-color: gray;
 }
 
 .ProjectCard a{
@@ -12,7 +12,8 @@
 }
 
 .cards{
-    padding: 5px;
+    background-color: darkblue;
+    padding: 10px;
     outline: auto;
     margin: 5px;
 }

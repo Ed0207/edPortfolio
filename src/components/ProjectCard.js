@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import "./ProjectCard.css"
-import { NULL } from 'sass';
 
 
 let DISPLAYCOUNT = 5;
@@ -87,8 +86,8 @@ function ProjectCard(){
 
     for(let i = 0; i < DISPLAYCOUNT; i++){
         
-        if(repos[i].language === NULL){
-            repos[i].language = "Null"
+        if(Object.is(repos[i].language, null)){
+            repos[i].language = "?"
         }
 
         displayComponent.push(

@@ -7,21 +7,19 @@
 
 
 .headshot{
+    width: 220px;
+    height: 300px;
     vertical-align: top;
     margin: 5vw;
-    margin-top: 0px;
+    margin-top: 4vh;
     padding: 0;
     border-radius: 15px;
-    max-width: 200px;
-    max-height: 300px;
-    object-fit: cover;
 }
 
 .aboutmeText{
     vertical-align: top;
     max-width: 60vw;
     margin: 5vw;
-    margin-top: 0px;
     display: inline-block;
 }
 
