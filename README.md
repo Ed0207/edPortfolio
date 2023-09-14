@@ -5,7 +5,7 @@ This is my personal project created for the purposes of
 - self-taught learning
 - skill demonstration 
 
-## This project is created primarily in React JS with NodeJS
+### This project is created primarily in React JS with NodeJS
 
 ### Highlight:
 - Implementing Axios API fetching for automatic Repository updated

@@ -18,8 +18,10 @@
 }
 
 .aboutmeText{
+    vertical-align: top;
     max-width: 60vw;
     margin: 5vw;
+    margin-top: 0px;
     display: inline-block;
 }
 

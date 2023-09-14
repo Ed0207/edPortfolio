@@ -1,8 +1,18 @@
 .ProjectCard{
+    color: white;
     text-align: center;
+    background-color: darkblue;
 }
 
 .ProjectCard a{
+    text-decoration: none;
+    color: white;
     margin-left: 1vw;
     display: inline-block;
+}
+
+.cards{
+    padding: 5px;
+    outline: auto;
+    margin: 5px;
 }
