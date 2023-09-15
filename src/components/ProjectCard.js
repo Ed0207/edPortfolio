@@ -100,10 +100,10 @@ function ProjectCard(){
 
                     displayComponent.push(
                         <a className='cards' href={repos[i].html_url}>
-                        Name: {repos[i].name} <br></br>
-                        Language: {repos[i].language}<br></br> 
-                        Description: {repos[i].description}<br></br>
-                        Last pushed at: {repos[i].pushed_at.substring(0,10)} <br></br>
+                            <div className='name'>Name: {repos[i].name}</div>
+                            <div className='language'>Language: {repos[i].language}</div>
+                            <div className='description'>Description: {repos[i].description}</div>
+                            <div className='lastPushed'>Last pushed at: {repos[i].pushed_at.substring(0,10)}</div>
                         </a>
                     )
                 }

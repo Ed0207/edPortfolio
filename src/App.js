@@ -1,17 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './routes/Home'
 import Test from './routes/Test'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route, useRoutes} from 'react-router-dom'
 
 
 function App() {
 
+  const routes = useRoutes([
+    {
+      path:"/",
+      element: <Home/>  
+    },
+    {
+      path:"/test",
+      element: <Test/>
+    }
+  ])
+
   return (
       <div className="App">
-        <Routes>
-          <Route path="/edPortfolio" element={<Home/>}/>
-          <Route path='/edPortfolio/test' element={<Test/>}/>
-        </Routes>
+        {routes}
       </div>
   );
 }

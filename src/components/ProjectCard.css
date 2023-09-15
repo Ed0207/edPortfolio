@@ -11,9 +11,21 @@
     display: inline-block;
 }
 
-.cards{
+.cards {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
     background-color: darkblue;
     padding: 10px;
     outline: auto;
     margin: 5px;
 }
+
+.name .language .description .lastPush{
+    max-width: 200px;
+    max-height: 20px;
+}
+
