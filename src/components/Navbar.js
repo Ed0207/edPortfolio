@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MyNavbar (props) {
+function Navbar (props) {
     return(
         <div>
             <nav className="navbar navbar-dark bg-dark">
@@ -10,4 +10,4 @@ function MyNavbar (props) {
     );
 }
 
-export default MyNavbar;
+export default Navbar;

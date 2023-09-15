@@ -1,20 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/MyNavbar';
-import Hero from './components/Hero';
-import AboutMe from './components/AboutMe';
-import ProjectCard from './components/ProjectCard';
-import Footer from './components/Footer';
+import Home from './routes/Home'
+import Test from './routes/Test'
+import {Routes, Route} from 'react-router-dom'
 
 
 function App() {
 
   return (
       <div className="App">
-        <Navbar name="Edward's portfolio"/>
-        <Hero text={"Welcome"}/>
-        <AboutMe/>
-        <ProjectCard/>
-        <Footer/>
+        <Routes>
+          <Route path="/edPortfolio" element={<Home/>}/>
+          <Route path='/edPortfolio/test' element={<Test/>}/>
+        </Routes>
       </div>
   );
 }
