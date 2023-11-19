@@ -47,15 +47,14 @@ function repoSort(repos){
 }
 
 
-// old implementation (cuases infinite render loop)
+// // old implementation (cuases infinite render loop)
 // // fetch github repository information
-// async function getRepo(){
 
+// async function getRepo(){
 //     let response = await axios({
 //       method: "get",
 //       url: 'https://api.github.com/users/ed0207/repos',
 //     })
-  
 //     return response
 //   }
 
@@ -85,19 +84,44 @@ function ProjectCard(){
                 let repos = response.data
 
                 repos = repoSort(repos)
+                console.log()
+                const repoMap = new Map(Object.entries(repos))
+                console.log("convert repositories entries to map")
+                console.log(repoMap)
+                
+                // console.log(repoMap.get("Entries").get(1))
                 
                 // Array length check
                 if(PROJECTCOUNT > repos.length){
                     PROJECTCOUNT = repos.length
                 }
 
+                // new implementation (map)
+                
+                // let itemCount = 0;
+                // const mapString = repoMap.filter(item =>
+                //     (itemCount++ < PROJECTCOUNT)? true: false
+                // ).map(item =>
+                //     <a className='cards' href={item.html_url}>
+                //             <div className='name'>Name: {item.name}</div>
+                //             <div className='language'>Language: {item.language}</div>
+                //             <div className='description'>Description: {item.description}</div>
+                //             <div className='lastPushed'>Last pushed at: {item.pushed_at.substring(0,10)}</div>
+                //      </a>
+                // )
+
+                // console.log("rendering repository item")
+                // console.log(mapString)
+
+                // setComponent(mapString)
+
+
+                // old implementation
                 // pushing render component
                 for(let i = 0; i < PROJECTCOUNT; i++){
-                    
                     if(Object.is(repos[i].language, null)){
                         repos[i].language = "?"
                     }
-
                     displayComponent.push(
                         <a className='cards' href={repos[i].html_url}>
                             <div className='name'>Name: {repos[i].name}</div>
@@ -110,8 +134,6 @@ function ProjectCard(){
 
                 setComponent(displayComponent)
 
-                console.log("rendering repository item")
-                console.log(repos)
 
             }else{
                 displayComponent.push(
