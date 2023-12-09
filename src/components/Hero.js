@@ -16,7 +16,7 @@ function MyHeader(props){
                     <h1>{props.text}</h1>
                     <Typed
                         className='typed-text'
-                        strings={['Web development^1000', 'Software engineering^1000','Game engine^1000', 'Mobile application^1000']}
+                        strings={['Web development^1000', 'Software engineering^1000','Game engine coding^1000', 'Mobile application^1000']}
                         typeSpeed={30}
                         backSpeed={50}
                         loop

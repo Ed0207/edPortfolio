@@ -1,4 +1,5 @@
 # Personal Portfolio 
+[ed0207.github.io/edPortfolio](https://ed0207.github.io/edPortfolio)
 
 This is my personal project created for the purposes of 
 
