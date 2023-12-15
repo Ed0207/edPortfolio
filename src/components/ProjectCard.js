@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import "./ProjectCard.css"
 
 
-let PROJECTCOUNT = 6;
+let PROJECTCOUNT = 5;
 
 function repoSort(repos){
 
