@@ -11,3 +11,9 @@
     width: 40vw;
     height: auto;
 }
+
+.Hyperlink{
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}

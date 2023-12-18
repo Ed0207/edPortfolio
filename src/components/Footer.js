@@ -13,7 +13,7 @@ function Footer(){
                 <h5>(778)513-4244</h5>
         </div>
         <div className='Footer-content'>
-                <a href=""><h5> <FaLinkedin/> LinkedIn</h5></a>
+                <a className="Hyperlink" href="https://www.linkedin.com/in/chien-an-chen-a1a7ba262/"><h5> <FaLinkedin/> LinkedIn</h5></a>
         </div>
         <div className='disclaimer'>
         
