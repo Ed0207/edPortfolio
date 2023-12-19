@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: center;
     object-fit: cover;
+    height: 95vh;
 }
 
 .img-filter::after{
@@ -25,11 +26,11 @@
 .hero-content{
     color: white;
     position: relative;
-    transform: translate(0%, -275%);
+    transform: translate(0%, -50vh);
     text-align: center;
 }
 
 .header-wraper{
     background-color: gray;
-    height: 350px;
+    height: 95vh;
 }

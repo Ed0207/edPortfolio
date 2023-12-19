@@ -1,8 +1,11 @@
 .aboutme{
+    min-height: 100vh;
+    max-height: 250vh;
     align-items: top;
     text-align: center;
     display: block;
     background-color: gray;
+    padding-top: 7vh;
 }
 
 
@@ -17,9 +20,12 @@
 }
 
 .aboutmeText{
-    vertical-align: top;
-    max-width: 60vw;
     margin: 5vw;
+    margin-top: 4vh;
+    padding-bottom: 10vh;
+    overflow-y: scroll;
+    vertical-align: top;
+    width: 60vw;
+    height: 50vh;
     display: inline-block;
 }
-
