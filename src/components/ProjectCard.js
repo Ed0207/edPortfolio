@@ -1,6 +1,5 @@
-import React from 'react'
+import {React, useState, useEffect, useRef} from 'react'
 import axios from 'axios';
-import {useState, useEffect} from 'react';
 import "./ProjectCard.css"
 
 
@@ -60,6 +59,10 @@ function repoSort(repos){
 
 
 function ProjectCard(){
+
+    // observer set element classes for CSS animation
+    const divRef = useRef();
+
 
     let [cardComponents, setComponent] = useState([])
 
@@ -145,12 +148,29 @@ function ProjectCard(){
         }).catch(() => {
             setComponent(<h3 color='red'>Error: network failure</h3>)
         })
+
+        // observer set element classes for CSS animation
+        const observer = new IntersectionObserver((entries) =>{
+            entries.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show')
+                    console.log(divRef.current)
+                }else{
+                    entry.target.classList.remove('show')
+                    console.log(divRef.current)
+                }
+            })
+        })
+        observer.observe(divRef.current);
     },[])
 
 
-    return(<div className='ProjectCard'>
-        <h4>Recent Projects </h4>
-        {cardComponents}
+    return(
+    <div className='ProjectCard'>
+        <div ref={divRef} className='hidden'>
+            <h4>Recent Projects </h4>
+            {cardComponents}
+        </div>
     </div>);
 }
 

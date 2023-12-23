@@ -28,17 +28,17 @@
     position: relative;
     transform: translate(0%, -65vh);
     text-align: center;
-    animation: fade-in 1.5s;
+    /* animation: fade-in 1s; */
 }
 
-@keyframes fade-in {
+/* @keyframes fade-in {
     from {
       opacity: 0;
     }
     to {
       opacity: 100;
     }
-  }
+} */
 
 .header-wraper{
     background-color: gray;
