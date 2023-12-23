@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './routes/Home'
 import Test from './routes/Test'
-import { Routes, Route, useRoutes} from 'react-router-dom'
-
+import {useRoutes} from 'react-router-dom'
 
 function App() {
 

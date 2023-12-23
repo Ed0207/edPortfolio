@@ -9,7 +9,7 @@
     background-size: cover;
     background-position: center;
     object-fit: cover;
-    height: 95vh;
+    height: 100vh;
 }
 
 .img-filter::after{
@@ -26,11 +26,21 @@
 .hero-content{
     color: white;
     position: relative;
-    transform: translate(0%, -50vh);
+    transform: translate(0%, -65vh);
     text-align: center;
+    animation: fade-in 1.5s;
 }
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
 
 .header-wraper{
     background-color: gray;
-    height: 95vh;
+    height: 100vh;
 }

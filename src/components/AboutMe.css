@@ -1,17 +1,17 @@
 .aboutme{
     min-height: 100vh;
-    max-height: 250vh;
+    max-height: 300vh;
     align-items: top;
     text-align: center;
     display: block;
     background-color: gray;
-    padding-top: 7vh;
+    padding-top: 10vh;
 }
 
 
 .headshot{
-    width: 220px;
-    height: 300px;
+    max-width: 220px;
+    max-height: 300px;
     vertical-align: top;
     margin: 5vw;
     margin-top: 4vh;
@@ -26,6 +26,6 @@
     overflow-y: scroll;
     vertical-align: top;
     width: 60vw;
-    height: 50vh;
+    height: 60vh;
     display: inline-block;
 }
