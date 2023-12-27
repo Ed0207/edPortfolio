@@ -20,8 +20,9 @@
     top: 0;
     left: 0;
     background-color: #000;
-    opacity: 0.7;
+    opacity: 0.77;
 }
+
 
 .hero-content{
     color: white;
@@ -30,6 +31,7 @@
     text-align: center;
     /* animation: fade-in 1s; */
 }
+
 
 /* @keyframes fade-in {
     from {

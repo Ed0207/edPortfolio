@@ -46,7 +46,7 @@ function repoSort(repos){
 }
 
 
-// // old implementation (cuases infinite render loop)
+// // old, buggy implementation (cuases infinite render loop)
 // // fetch github repository information
 
 // async function getRepo(){

@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import AboutMe from '../components/AboutMe';
 import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer';
-import './Anime.css'
 
 function Home(){
     return(
