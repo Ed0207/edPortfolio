@@ -25,9 +25,19 @@
     color: white;
 }
 
+.faIcon:hover{
+    color: blue;
+}
+
+.logo{
+    margin: 0;
+    padding-right: 0.5vw;
+}
+
 /* changing navigation bar button when corresponding device apply */
 @media screen and (max-width: 1040px) {
     .nav-menu{
+        opacity: 0.9;
         background-color: black;
         flex-direction: column;
         justify-content: center;
@@ -38,6 +48,8 @@
         top: 0;
         left: -100%;
         z-index: -1;
+        
+        transition: 0.4s;
     }
 
     .nav-menu.show{
@@ -45,6 +57,7 @@
     }
 
     .nav-menu li{
+        text-align: center;
         padding: 5vh 5vw;
     }
 
