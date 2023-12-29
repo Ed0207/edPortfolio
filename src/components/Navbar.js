@@ -1,14 +1,18 @@
-import React from 'react';
+import {React, useState} from 'react';
 import "./Navbar.css"
 import { Link } from 'react-router-dom';
+import {FaBars} from "react-icons/fa"
 
 function Navbar (props) {
 
     let banner = props.name
-
     if(props.name == null){
-        banner = "Ed's portfolio"
+        banner = "Edward's Portfolio"
     }
+
+    // click event handler
+    const [click, setClick] = useState(false);
+    const clickHandler = () => setClick(!click)
 
     // props.name = Ed's portfolio
     return(
@@ -16,17 +20,24 @@ function Navbar (props) {
             <Link to="/">
                 {banner}
             </Link>
-            <ul className='nav-menu'>
+            <FaBars onClick={clickHandler} className='faIcon'></FaBars>
+            <ul className={click ? "nav-menu show" : "nav-menu"}>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>
                     <Link to="/test">Testing</Link>
                 </li>
+                <li>
+                    <Link to="/">link3</Link>
+                </li>
+                <li>
+                    <Link to="/">link4</Link>
+                </li>
+                <li>
+                    <Link to="/">link5</Link>
+                </li>
             </ul>
-            {/* <nav className="navbar navbar-dark bg-dark">
-                    <a className="navbar-brand mr-auto p-2" href="./">{props.name}</a>
-            </nav> */}
         </div>
     );
 }
