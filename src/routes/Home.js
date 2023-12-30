@@ -9,7 +9,7 @@ function Home(){
     return(
     <div className='Home'>
         <Navbar name="Edward's Portfolio" dynamic="true"></Navbar>
-        <Hero text="Work in progress.. (~20% complete)"></Hero>
+        <Hero text="Work in progress... (~30% complete)"></Hero>
         <AboutMe></AboutMe>
         <ProjectCard></ProjectCard>
         <Footer></Footer>

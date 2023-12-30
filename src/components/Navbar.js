@@ -30,6 +30,7 @@ function Navbar (props) {
             console.log("scroll up")
         }else{
             setNavBarVis(false)
+            setClick(false)
             console.log("scroll down")
         }
         this.oldScroll = this.scrollY;
