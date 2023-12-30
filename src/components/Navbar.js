@@ -20,18 +20,38 @@ function Navbar (props) {
     }
 
     // navbar useState
-    const [navbarTop, setNavBarVis] = useState(false);
-    const navbarColorChange = () => {
-        if(window.scrollY >= 20){
-            setNavBarVis(true);
-        }else{
-            setNavBarVis(false);
-        }
-        console.log("screen y = " + window.scrollY)
-    }
+    const [navbarTop, setNavBarVis] = useState(true);
 
-    // scroll listner (for dynamic navbar)
-    window.addEventListener("scroll", navbarColorChange)
+    window.onscroll = function(e) {
+        // print "false" if direction is down and "true" if up
+        console.log(this.oldScroll > this.scrollY);
+        if(this.oldScroll > this.scrollY){
+            setNavBarVis(true)
+            console.log("scroll up")
+        }else{
+            setNavBarVis(false)
+            console.log("scroll down")
+        }
+        this.oldScroll = this.scrollY;
+      }
+
+
+    // let lastScrollTop = 0;
+    // const navbarColorChange = () => {
+
+    //     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    //     if (st > lastScrollTop) {
+    //        setNavBarVis(false)
+    //        console.log("scroll down")
+    //     } else if (st < lastScrollTop) {
+    //        setNavBarVis(true)
+    //        console.log("scroll up")
+    //     } 
+    //     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    // }
+
+    // // scroll listner (for dynamic navbar)
+    // window.addEventListener("scroll", navbarColorChange)
     
     if(props.dynamic === "true"){
         // props.name = Ed's portfolio

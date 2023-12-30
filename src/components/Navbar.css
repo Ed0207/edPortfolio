@@ -10,12 +10,12 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    transition: 1s;
+    transition: 0.4s;
 }
 
 .title.inactive{
     top: -50%;
-    transition: 1s;
+    transition: 2s;
 }
 
 .nav-menu{
