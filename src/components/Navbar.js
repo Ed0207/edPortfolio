@@ -1,4 +1,4 @@
-import {React, useState, useRef} from 'react';
+import {React, useState} from 'react';
 import "./Navbar.css"
 import { Link } from 'react-router-dom';
 import {FaBars} from "react-icons/fa"
@@ -11,15 +11,58 @@ function Navbar (props) {
         banner = "Edward's Portfolio"
     }
 
-    // reference for menu
-    const menuRef = useRef();
+
 
     // click event handler
     const [click, setClick] = useState(false);
     const clickHandler = () =>{ 
         setClick(!click)
     }
+
+    // navbar useState
+    const [navbarTop, setNavBarVis] = useState(false);
+    const navbarColorChange = () => {
+        if(window.scrollY >= 20){
+            setNavBarVis(true);
+        }else{
+            setNavBarVis(false);
+        }
+        console.log("screen y = " + window.scrollY)
+    }
+
+    // scroll listner (for dynamic navbar)
+    window.addEventListener("scroll", navbarColorChange)
     
+    if(props.dynamic === "true"){
+        // props.name = Ed's portfolio
+        return(
+            <div className={navbarTop ? "title" : "title inactive"}>
+                <Link to="/">
+                    <img className="logo" src={logo} alt='logo'></img>
+                    {banner}
+                </Link>
+                <FaBars onClick={clickHandler} className='faIcon'></FaBars>
+                <ul  className={click ? "nav-menu show" : "nav-menu"}>
+                    <li onClick={clickHandler} >
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li onClick={clickHandler} >
+                        <Link to="/test">Testing</Link>
+                    </li>
+                    <li onClick={clickHandler} >
+                        <Link to="/">link3</Link>
+                    </li>
+                    <li onClick={clickHandler} >
+                        <Link to="/">link4</Link>
+                    </li>
+                    <li onClick={clickHandler} >
+                        <Link to="/">link5</Link>
+                    </li>
+                </ul>
+            </div>
+        );
+    }
+
     // props.name = Ed's portfolio
     return(
         <div className="title">
@@ -28,7 +71,7 @@ function Navbar (props) {
                 {banner}
             </Link>
             <FaBars onClick={clickHandler} className='faIcon'></FaBars>
-            <ul ref={menuRef} className={click ? "nav-menu show" : "nav-menu"}>
+            <ul  className={click ? "nav-menu show" : "nav-menu"}>
                 <li onClick={clickHandler} >
                     <Link to="/">Home</Link>
                 </li>

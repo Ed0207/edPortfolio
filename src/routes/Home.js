@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 function Home(){
     return(
     <div className='Home'>
-        <Navbar name="Edward's Portfolio"></Navbar>
+        <Navbar name="Edward's Portfolio" dynamic="true"></Navbar>
         <Hero text="Work in progress.. (~20% complete)"></Hero>
         <AboutMe></AboutMe>
         <ProjectCard></ProjectCard>

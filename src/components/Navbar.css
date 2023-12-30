@@ -1,12 +1,21 @@
 .title{
+    position: fixed;
+    width: 100%;
     font-size: larger;
+    background-color: black;
+    opacity: 0.9;
     padding: 2vh 2vw;
-    position: relative;
     top: 0;
     left: 0;
     z-index: 1;
     display: flex;
     justify-content: space-between;
+    transition: 1s;
+}
+
+.title.inactive{
+    top: -50%;
+    transition: 1s;
 }
 
 .nav-menu{
@@ -37,7 +46,7 @@
 /* changing navigation bar button when corresponding device apply */
 @media screen and (max-width: 1040px) {
     .nav-menu{
-        opacity: 0.9;
+        opacity: 0.8;
         background-color: black;
         flex-direction: column;
         justify-content: center;
