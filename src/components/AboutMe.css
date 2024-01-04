@@ -1,5 +1,5 @@
 .aboutme{
-    min-height: 100vh;
+    min-height: 60vh;
     max-height: 300vh;
     align-items: top;
     text-align: center;
@@ -26,6 +26,7 @@
     overflow-y: scroll;
     vertical-align: top;
     width: 60vw;
-    height: 60vh;
+    min-height: 30vh;
+    max-height: 50vh;
     display: inline-block;
 }

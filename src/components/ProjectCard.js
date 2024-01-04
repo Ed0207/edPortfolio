@@ -168,7 +168,7 @@ function ProjectCard(){
     return(
     <div className='ProjectCard'>
         <div ref={divRef} className='hidden'>
-            <h4>Recent Projects </h4>
+            <h4>Latest Github push</h4>
             {cardComponents}
         </div>
     </div>);

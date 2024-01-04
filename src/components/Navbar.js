@@ -1,6 +1,7 @@
 import {React, useState} from 'react';
 import "./Navbar.css"
 import { Link } from 'react-router-dom';
+import {Link as ScrollLink} from 'react-scroll';
 import {FaBars} from "react-icons/fa"
 import logo from "../assets/logo.png"
 
@@ -12,7 +13,6 @@ function Navbar (props) {
     }
 
 
-
     // click event handler
     const [click, setClick] = useState(false);
     const clickHandler = () =>{ 
@@ -22,6 +22,7 @@ function Navbar (props) {
     // navbar useState
     const [navbarTop, setNavBarVis] = useState(true);
 
+    // scroll detection
     window.onscroll = function(e) {
         // print "false" if direction is down and "true" if up
         console.log(this.oldScroll > this.scrollY);
@@ -63,26 +64,31 @@ function Navbar (props) {
                     {banner}
                 </Link>
                 <FaBars onClick={clickHandler} className='faIcon'></FaBars>
+
                 <ul  className={click ? "nav-menu show" : "nav-menu"}>
+
                     <li onClick={clickHandler} >
-                        <Link to="/">Home</Link>
+                        <ScrollLink className='links'to="header-wraper">Home</ScrollLink>
                     </li>
-                    <li onClick={clickHandler} >
-                        <Link to="/test">Testing</Link>
+
+                    <li onClick={clickHandler}>
+                        <ScrollLink className='links'to="aboutme">About me</ScrollLink>
                     </li>
-                    <li onClick={clickHandler} >
-                        <Link to="/">link3</Link>
+
+                    <li onClick={clickHandler}>
+                        <ScrollLink className='links'to="ProjectCard">Project</ScrollLink>
                     </li>
-                    <li onClick={clickHandler} >
-                        <Link to="/">link4</Link>
+
+                    <li onClick={clickHandler}>
+                        <Link to="/test">Test Page</Link>
                     </li>
-                    <li onClick={clickHandler} >
-                        <Link to="/">link5</Link>
-                    </li>
+
                 </ul>
             </div>
         );
     }
+
+
 
     // props.name = Ed's portfolio
     return(
@@ -93,21 +99,22 @@ function Navbar (props) {
             </Link>
             <FaBars onClick={clickHandler} className='faIcon'></FaBars>
             <ul  className={click ? "nav-menu show" : "nav-menu"}>
-                <li onClick={clickHandler} >
-                    <Link to="/">Home</Link>
-                </li>
-                <li onClick={clickHandler} >
-                    <Link to="/test">Testing</Link>
-                </li>
-                <li onClick={clickHandler} >
-                    <Link to="/">link3</Link>
-                </li>
-                <li onClick={clickHandler} >
-                    <Link to="/">link4</Link>
-                </li>
-                <li onClick={clickHandler} >
-                    <Link to="/">link5</Link>
-                </li>
+                    <li onClick={clickHandler} >
+                        <ScrollLink className='links'to="hero">Home</ScrollLink>
+                    </li>
+
+                    <li onClick={clickHandler}>
+                        <ScrollLink className='links'to="aboutme">About me</ScrollLink>
+                    </li>
+
+                    <li onClick={clickHandler}>
+                        <ScrollLink className='links'to="project">Project</ScrollLink>
+                    </li>
+
+
+                    <li onClick={clickHandler}>
+                        <Link to="/test">Test Page</Link>
+                    </li>
             </ul>
         </div>
     );
