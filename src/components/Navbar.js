@@ -31,14 +31,15 @@ function Navbar (props) {
             console.log("scroll up")
         }else{
             setNavBarVis(false)
-            setClick(false)
             console.log("scroll down")
         }
+        // hide nav bar menu on scroll
+        setClick(false)
         this.oldScroll = this.scrollY;
-      }
+    }
 
 
-    // let lastScrollTop = 0;
+    // let lastScrollTop = 0; 
     // const navbarColorChange = () => {
 
     //     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
@@ -80,7 +81,7 @@ function Navbar (props) {
                     </li>
 
                     <li onClick={clickHandler}>
-                        <Link to="/test">Test Page</Link>
+                        <Link to="/test">Testing Page</Link>
                     </li>
 
                 </ul>
@@ -99,18 +100,11 @@ function Navbar (props) {
             </Link>
             <FaBars onClick={clickHandler} className='faIcon'></FaBars>
             <ul  className={click ? "nav-menu show" : "nav-menu"}>
-                    <li onClick={clickHandler} >
-                        <ScrollLink className='links'to="hero">Home</ScrollLink>
-                    </li>
 
-                    <li onClick={clickHandler}>
-                        <ScrollLink className='links'to="aboutme">About me</ScrollLink>
-                    </li>
 
-                    <li onClick={clickHandler}>
-                        <ScrollLink className='links'to="project">Project</ScrollLink>
+                     <li onClick={clickHandler}>
+                        <Link to="/">Home</Link>
                     </li>
-
 
                     <li onClick={clickHandler}>
                         <Link to="/test">Test Page</Link>

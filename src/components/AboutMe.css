@@ -26,7 +26,7 @@
     overflow-y: scroll;
     vertical-align: top;
     width: 60vw;
-    min-height: 30vh;
-    max-height: 50vh;
+    min-height: 20vh;
+    max-height: 40vh;
     display: inline-block;
 }

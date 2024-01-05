@@ -4,6 +4,7 @@ import "./ProjectCard.css"
 
 
 let PROJECTCOUNT = 5;
+let CENTERCARD = 0;
 
 function repoSort(repos){
 
@@ -62,10 +63,9 @@ function ProjectCard(){
 
     // observer set element classes for CSS animation
     const divRef = useRef();
-
+    const cardRef = useRef();
 
     let [cardComponents, setComponent] = useState([])
-
 
     // let process = getRepo()
     // process.then(result =>{
@@ -119,12 +119,14 @@ function ProjectCard(){
                 // setComponent(mapString)
 
 
-                // old implementation
+                // original implementation
                 // pushing render component
                 for(let i = 0; i < PROJECTCOUNT; i++){
                     if(Object.is(repos[i].language, null)){
                         repos[i].language = "?"
                     }
+
+
                     displayComponent.push(
                         <a className='cards' href={repos[i].html_url}>
                             <div className='name'>Name: {repos[i].name}</div>
@@ -146,7 +148,7 @@ function ProjectCard(){
                 setComponent(cardComponents)
             }
         }).catch(() => {
-            setComponent(<h3 color='red'>Error: network failure</h3>)
+            setComponent(<h3 color='red' background-color="black">Error: network failure</h3>)
         })
 
         // observer set element classes for CSS animation
@@ -162,6 +164,20 @@ function ProjectCard(){
             })
         })
         observer.observe(divRef.current);
+
+        // WIP
+        // card observer
+        const cardObserver = new IntersectionObserver((entries =>{
+            entries.forEach((value, i) =>{
+                if(i === CENTERCARD){
+                    value.target.classList.add('mainCard')
+                    console.log("main card : " + CENTERCARD)
+                }else{
+                    value.target.classList.remove('mainCard')
+                }
+            })
+        }))
+        // cardObserver.observe(cardRef.current);
     },[])
 
 
@@ -169,7 +185,9 @@ function ProjectCard(){
     <div className='ProjectCard'>
         <div ref={divRef} className='hidden'>
             <h4>Latest Github push</h4>
-            {cardComponents}
+            <div ref={cardRef}>
+                {cardComponents}
+            </div>
         </div>
     </div>);
 }

@@ -1,5 +1,6 @@
 .ProjectCard{
-    padding-top: 5vh;
+    overflow-x: hidden;
+    padding-top: 2vh;
     color: white;
     text-align: center;
     background-color: gray;
@@ -16,14 +17,28 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 200px;
-    max-height: 200px;
-    max-width: 200px;
+    height: 20vh;
+    width: 15vw;
     background-color: darkblue;
     padding: 10px;
     outline: auto;
     margin: 5px;
 }
+
+.mainCard{
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40vh;
+    width: 30vw;
+    background-color: darkblue;
+    padding: 10px;
+    outline: auto;
+    margin: 5px;
+    transition: 1s;
+}
+
 
 .name .language .description .lastPush{
     max-width: 200px;
