@@ -23,11 +23,19 @@ function AboutMe(props){
 
         // get current textbox y position
         let currentY = textRef.current.scrollTop;
-        console.log("current textbox y : " + currentY);
+        
+
+
 
 
         // if scrolling down
         if(direction == 1){
+
+            // known rounding error
+            // Math.ceil to avoid rounding error on Google Chrome and MS Edge
+            currentY = Math.ceil(currentY);
+            console.log("current textbox y : " + currentY);
+
             // get current textBox index
             for(let i = 0; i < TEXTSECTIONCOUNT; i++){
                 let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
@@ -39,7 +47,13 @@ function AboutMe(props){
         
         // if scrolling up
         }else{
-          // get current textBox index
+
+            // known rounding error
+            // Math.ceil to avoid rounding error on Google Chrome and MS Edge
+            currentY = Math.floor(currentY);
+            console.log("current textbox y : " + currentY);
+
+            // get current textBox index
             for(let i = 0; i < TEXTSECTIONCOUNT; i++){
                 let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
                 if(currentY == checkingOffset || currentY < checkingOffset){

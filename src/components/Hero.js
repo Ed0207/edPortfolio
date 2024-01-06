@@ -15,7 +15,7 @@ function MyHeader(props){
     return (
         <div className='header-wraper' id="top">
                 <div className='img-filter'>
-                    <video src={animateBG} autoPlay loop muted className='hero-img' >
+                    <video src={animateBG} autoPlay loop muted playsInline className='hero-img' >
                     </video>
                     {/* <img className='hero-img' alt="generic programming background" src={img1} height={350}/> */}
                 </div>
