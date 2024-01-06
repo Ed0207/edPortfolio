@@ -1,25 +1,111 @@
-import {React, useRef} from 'react'
+import {React, useRef, useState} from 'react'
 import headshot from "./../assets/ed-selfie.jpg"
 import './AboutMe.css'
 import SetAnimation from './SetAnimation'
+import {FaArrowUp, FaArrowDown} from "react-icons/fa"
 
 
 function AboutMe(props){
 
-    // observer set element classes for CSS animation
     const divRef = useRef();
+    const textRef = useRef();
+    let textBoxY = 0;
+
+    // observer set element classes for CSS animation
+
     SetAnimation(divRef);
+
+    const clickHandler = (direction) =>{
+
+        const TEXTSECTIONCOUNT = document.getElementsByClassName("text-section").length;
+        const TOTALHEIGHT = textRef.current.offsetTop + textRef.current.offsetHeight * TEXTSECTIONCOUNT;
+
+        textBoxY += textRef.current.offsetHeight * direction
+
+        if(textBoxY < 0){
+            textBoxY = 0;
+        }
+
+        if(textBoxY > TOTALHEIGHT){
+            textBoxY = TOTALHEIGHT -textRef.current.offsetHeight;
+        }
+
+        if(textBoxY < 0){
+            textBoxY = 0;
+        }
+
+
+
+        textRef.current.scrollTo({
+            top: textBoxY,
+            left: 0,
+            behavior: "smooth",
+          });
+    }
+
 
     return(
             <div className='aboutme'>
                 <div ref={divRef} className='hidden'>
                     <h2>About Me</h2>
-                    <img src={headshot} className='headshot' alt='Edward Chen'/>
-                    <div className='aboutmeText'>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat. Lorem sed risus ultricies tristique nulla aliquet enim. Magna ac placerat vestibulum lectus mauris. Arcu cursus vitae congue mauris. Amet mauris commodo quis imperdiet massa tincidunt nunc. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Amet tellus cras adipiscing enim eu turpis egestas. Dolor sit amet consectetur adipiscing elit ut. Amet risus nullam eget felis eget. Ut enim blandit volutpat maecenas. Viverra ipsum nunc aliquet bibendum enim facilisis. Fringilla est ullamcorper eget nulla. Diam vulputate ut pharetra sit amet. Dignissim convallis aenean et tortor at risus. Nisl pretium fusce id velit ut tortor pretium viverra. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Blandit volutpat maecenas volutpat blandit aliquam etiam.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat. Lorem sed risus ultricies tristique nulla aliquet enim. Magna ac placerat vestibulum lectus mauris. Arcu cursus vitae congue mauris. Amet mauris commodo quis imperdiet massa tincidunt nunc. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Amet tellus cras adipiscing enim eu turpis egestas. Dolor sit amet consectetur adipiscing elit ut. Amet risus nullam eget felis eget. Ut enim blandit volutpat maecenas. Viverra ipsum nunc aliquet bibendum enim facilisis. Fringilla est ullamcorper eget nulla. Diam vulputate ut pharetra sit amet. Dignissim convallis aenean et tortor at risus. Nisl pretium fusce id velit ut tortor pretium viverra. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Blandit volutpat maecenas volutpat blandit aliquam etiam.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat. Lorem sed risus ultricies tristique nulla aliquet enim. Magna ac placerat vestibulum lectus mauris. Arcu cursus vitae congue mauris. Amet mauris commodo quis imperdiet massa tincidunt nunc. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Amet tellus cras adipiscing enim eu turpis egestas. Dolor sit amet consectetur adipiscing elit ut. Amet risus nullam eget felis eget. Ut enim blandit volutpat maecenas. Viverra ipsum nunc aliquet bibendum enim facilisis. Fringilla est ullamcorper eget nulla. Diam vulputate ut pharetra sit amet. Dignissim convallis aenean et tortor at risus. Nisl pretium fusce id velit ut tortor pretium viverra. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Blandit volutpat maecenas volutpat blandit aliquam etiam.
-                        </p>
+                    <img src={headshot} className='headshot' alt='Edwards photo'/>
+                    <div ref={textRef} className='aboutmeText'>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>
+                        <div className='text-section'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>  
+                    </div>
+                    <div className='textBoxButton'>
+                        <FaArrowUp onClick={((e) => clickHandler(-1))}></FaArrowUp>
+                        <FaArrowDown onClick={((e) => clickHandler(1))}></FaArrowDown>
                     </div>
             </div>
     </div>);

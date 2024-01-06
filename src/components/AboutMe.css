@@ -1,6 +1,6 @@
 .aboutme{
     min-height: 60vh;
-    max-height: 300vh;
+    max-height: 1000vh;
     align-items: top;
     text-align: center;
     display: block;
@@ -20,13 +20,30 @@
 }
 
 .aboutmeText{
-    margin: 5vw;
+    margin: 2vw;
+    margin-left: 5vw;
     margin-top: 4vh;
     padding-bottom: 10vh;
     overflow-y: scroll;
     vertical-align: top;
-    width: 60vw;
+    max-width: 50vw;
     min-height: 20vh;
     max-height: 40vh;
     display: inline-block;
+}
+
+.textBoxButton{
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 8vh;
+    min-height: 20vh;
+    max-height: 50vh;
+    width: fit-content;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-section{
+    height: 40vh;
 }
