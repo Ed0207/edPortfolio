@@ -9,35 +9,48 @@ function AboutMe(props){
 
     const divRef = useRef();
     const textRef = useRef();
-    let textBoxY = 0;
+    let textBoxIndex = 0;
 
     // observer set element classes for CSS animation
 
+
     SetAnimation(divRef);
 
+    // scroll to nearby text box content top
     const clickHandler = (direction) =>{
 
         const TEXTSECTIONCOUNT = document.getElementsByClassName("text-section").length;
-        const TOTALHEIGHT = textRef.current.offsetTop + textRef.current.offsetHeight * TEXTSECTIONCOUNT;
 
-        textBoxY += textRef.current.offsetHeight * direction
 
-        if(textBoxY < 0){
-            textBoxY = 0;
+        // get current textbox y position
+        let currentY = textRef.current.scrollTop;
+        console.log("current textbox y : " + currentY);
+
+        // get current textBox index
+        for(let i = 0; i < TEXTSECTIONCOUNT; i++){
+            let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
+            if(currentY < checkingOffset){
+                textBoxIndex = i-1;
+                break;
+            }
         }
+        console.log("current textbox section index : " + textBoxIndex);
 
-        if(textBoxY > TOTALHEIGHT){
-            textBoxY = TOTALHEIGHT -textRef.current.offsetHeight;
-        }
+        textBoxIndex += direction
 
-        if(textBoxY < 0){
-            textBoxY = 0;
-        }
+        // boundary check
+        if(textBoxIndex < 0)
+            textBoxIndex = 0
+        if(textBoxIndex > TEXTSECTIONCOUNT - 1)
+            textBoxIndex = TEXTSECTIONCOUNT - 1;
 
+        // calculate text-section offset for index
+        let targetOffset = document.getElementsByClassName("text-section")[textBoxIndex].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop
 
+        console.log("target offset : " + targetOffset );
 
         textRef.current.scrollTo({
-            top: textBoxY,
+            top: targetOffset,
             left: 0,
             behavior: "smooth",
           });
@@ -51,56 +64,67 @@ function AboutMe(props){
                     <img src={headshot} className='headshot' alt='Edwards photo'/>
                     <div ref={textRef} className='aboutmeText'>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>1 <br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>2 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>3 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>4 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>5 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>6 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>7 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>8 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>9 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>10 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>11 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>12 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
                         </div>
                         <div className='text-section'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            <p>13 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
                             </p>
+                        </div>  
+                        <div className='text-section'>
+                            <p>14 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>  
+                        <div className='text-section'>
+                            <p>15 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                            </p>
+                        </div>  
+                        <div className='text-section'>
+                            <p>16<br></br>end</p>
                         </div>  
                     </div>
                     <div className='textBoxButton'>
