@@ -75,7 +75,7 @@ function AboutMe(props){
     return(
             <div className='aboutme'>
                 <div ref={divRef} className='hidden'>
-                    <div className='container'>
+                    <div>
                         <h2>About Me</h2>
                         <img src={headshot} className='headshot' alt='Edwards photo'/>
                         <div ref={textRef} className='aboutmeText'>
