@@ -24,6 +24,12 @@ h1, h2, h3, h4, h5, h6, p, a{
     opacity: 1;
 }
 
+.container{
+    background-color: gray;
+    border-radius: 25px;
+    padding: 2vh 1vw;
+}
+
 @media(prefers-reduced-motion) {
     .hidden{
         transition: none;

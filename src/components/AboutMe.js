@@ -21,22 +21,37 @@ function AboutMe(props){
 
         const TEXTSECTIONCOUNT = document.getElementsByClassName("text-section").length;
 
-
         // get current textbox y position
         let currentY = textRef.current.scrollTop;
         console.log("current textbox y : " + currentY);
 
-        // get current textBox index
-        for(let i = 0; i < TEXTSECTIONCOUNT; i++){
-            let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
-            if(currentY < checkingOffset){
-                textBoxIndex = i-1;
-                break;
+
+        // if scrolling down
+        if(direction == 1){
+            // get current textBox index
+            for(let i = 0; i < TEXTSECTIONCOUNT; i++){
+                let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
+                if(currentY < checkingOffset){
+                    textBoxIndex = i-1;
+                    break;
+                }
             }
+        
+        // if scrolling up
+        }else{
+          // get current textBox index
+            for(let i = 0; i < TEXTSECTIONCOUNT; i++){
+                let checkingOffset = document.getElementsByClassName("text-section")[i].offsetTop - document.getElementsByClassName("text-section")[0].offsetTop;
+                if(currentY == checkingOffset || currentY < checkingOffset){
+                    textBoxIndex = i;
+                    break;
+                }
+            }          
         }
-        console.log("current textbox section index : " + textBoxIndex);
+
 
         textBoxIndex += direction
+        console.log("current textbox section index : " + textBoxIndex);
 
         // boundary check
         if(textBoxIndex < 0)
@@ -60,78 +75,82 @@ function AboutMe(props){
     return(
             <div className='aboutme'>
                 <div ref={divRef} className='hidden'>
-                    <h2>About Me</h2>
-                    <img src={headshot} className='headshot' alt='Edwards photo'/>
-                    <div ref={textRef} className='aboutmeText'>
-                        <div className='text-section'>
-                            <p>1 <br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
+                    <div className='container'>
+                        <h2>About Me</h2>
+                        <img src={headshot} className='headshot' alt='Edwards photo'/>
+                        <div ref={textRef} className='aboutmeText'>
+                            <div className='text-section'>
+                                <p>1 <br></br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                            </div>
+                            <div className='text-section'>
+                                <p>2 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                            </div>
+                            <div className='text-section'>
+                                <p>3 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+
+                            </div>
+                            <div className='text-section'>
+                                <p>4 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                            </div>
+                            <div className='text-section'>
+                                <p>5 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
+                                </p>
+
+                            </div>
+                            <div >
+                                <p>6<br></br>end</p>
+                            </div>  
                         </div>
-                        <div className='text-section'>
-                            <p>2 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
+                        <div className='textBoxButton'>
+                            <FaArrowUp onClick={((e) => clickHandler(-1))}></FaArrowUp>
+                            <FaArrowDown onClick={((e) => clickHandler(1))}></FaArrowDown>
                         </div>
-                        <div className='text-section'>
-                            <p>3 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>4 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>5 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>6 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>7 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>8 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>9 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>10 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>11 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>12 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>
-                        <div className='text-section'>
-                            <p>13 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>  
-                        <div className='text-section'>
-                            <p>14 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>  
-                        <div className='text-section'>
-                            <p>15 <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    
-                            </p>
-                        </div>  
-                        <div className='text-section'>
-                            <p>16<br></br>end</p>
-                        </div>  
                     </div>
-                    <div className='textBoxButton'>
-                        <FaArrowUp onClick={((e) => clickHandler(-1))}></FaArrowUp>
-                        <FaArrowDown onClick={((e) => clickHandler(1))}></FaArrowDown>
-                    </div>
-            </div>
+                </div>
     </div>);
 }
 

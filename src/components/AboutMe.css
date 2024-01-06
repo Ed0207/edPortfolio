@@ -1,13 +1,15 @@
 .aboutme{
     min-height: 60vh;
     max-height: 1000vh;
+    margin: 10vh;
     align-items: top;
     text-align: center;
     display: block;
-    background-color: gray;
+    background-color: dark;
     padding-top: 3vh;
+    padding-left: 0;
+    padding-right: 0;
 }
-
 
 .headshot{
     max-width: 220px;
