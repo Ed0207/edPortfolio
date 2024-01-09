@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import {FaHome, FaPhone, FaTwitter, FaLinkedin} from "react-icons/fa"
+import {FaHome, FaPhone, FaGithub, FaLinkedin} from "react-icons/fa"
 
 function Footer(){
     return(<div className='Footer'>
@@ -14,6 +14,7 @@ function Footer(){
         </div>
         <div className='Footer-content'>
                 <a className="Hyperlink" href="https://www.linkedin.com/in/chien-an-chen-a1a7ba262/"><h5> <FaLinkedin/> LinkedIn</h5></a>
+                <a className='Hyperlink' href='https://github.com/Ed0207'><h5> <FaGithub/> Github Profile</h5></a>
         </div>
         <div className='disclaimer'>
         
