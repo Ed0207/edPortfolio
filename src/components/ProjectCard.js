@@ -105,7 +105,7 @@ function ProjectCard(){
                 // const mapString = repoMap.filter(item =>
                 //     (itemCount++ < PROJECTCOUNT)? true: false
                 // ).map(item =>
-                //     <a className='cards' href={item.html_url}>
+                //     <a className='card' href={item.html_url}>
                 //             <div className='name'>Name: {item.name}</div>
                 //             <div className='language'>Language: {item.language}</div>
                 //             <div className='description'>Description: {item.description}</div>
@@ -128,11 +128,11 @@ function ProjectCard(){
 
 
                     displayComponent.push(
-                        <a className='cards' href={repos[i].html_url}>
-                            <div className='name'>Name: {repos[i].name}</div>
-                            <div className='language'>Language: {repos[i].language}</div>
-                            <div className='description'>Description: {repos[i].description}</div>
-                            <div className='lastPushed'>Last pushed at: {repos[i].pushed_at.substring(0,10)}</div>
+                        <a className='card' href={repos[i].html_url}>
+                            <div className='name'>Name:     {repos[i].name}</div>
+                            <div className='language'>Language:     {repos[i].language}</div>
+                            <div className='lastPushed'>Last pushed at:     {repos[i].pushed_at.substring(0,10)}</div>
+                            <div className='description'>Description:       {repos[i].description}</div>
                         </a>
                     )
                 }
@@ -186,8 +186,10 @@ function ProjectCard(){
         <div ref={divRef} className='hidden'>
             <div>
                 <h4>Latest Github push</h4>
-                <div ref={cardRef}>
-                    {cardComponents}
+                <div className='card-container'>
+                    <div ref={cardRef} className='card-list'>
+                        {cardComponents}
+                    </div>
                 </div>
             </div>
         </div>

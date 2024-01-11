@@ -25,9 +25,6 @@ function AboutMe(props){
         let currentY = textRef.current.scrollTop;
         
 
-
-
-
         // if scrolling down
         if(direction == 1){
 

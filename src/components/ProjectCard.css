@@ -1,19 +1,57 @@
 .ProjectCard{
-    overflow-x: hidden;
     padding-top: 2vh;
     color: white;
     text-align: center;
     background-color: darkgray;
+    max-height: 100vh;
 }
 
 .ProjectCard a{
     text-decoration: none;
     color: white;
-    margin-left: 1vw;
-    display: inline-block;
+    margin: 0vh 1vw;
 }
 
-.cards {
+.card-container{
+    width: 100%;
+    display: flex;
+    max-height: 60vh;
+    overflow: scroll;
+    
+}
+
+.card-list{
+    display: flex;
+    margin: 1vh 1vw;
+    padding: 5vh 5vw;
+    text-overflow:ellipsis;
+}
+
+
+.card{
+    padding: 1vh 1vw;
+    background-color: black;
+    text-align: left;
+    width: 30vw;
+    height: 40vh;
+    box-shadow: gray 7px 7px;
+    overflow: hidden;
+}
+
+.card:hover{
+    width: 40vw;
+    height: 45vh;
+    transform: translate(0%, -5%);
+    overflow: scroll;
+    transition: 0.2s;
+}
+
+.name .language .description .lastPush{
+    background-color: pink;
+}
+
+/*
+.card {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -44,4 +82,4 @@
     max-width: 200px;
     max-height: 20px;
 }
-
+ */
