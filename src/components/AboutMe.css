@@ -18,9 +18,11 @@
     margin-top: 4vh;
     padding: 0;
     border-radius: 15px;
+    box-shadow: gray 3px 3px;
 }
 
 .aboutmeText{
+    color: black;
     margin: 2vw;
     margin-left: 5vw;
     margin-top: 4vh;

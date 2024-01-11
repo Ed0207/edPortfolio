@@ -41,6 +41,7 @@
 .card:hover{
     width: 40vw;
     height: 45vh;
+    padding-top: 0;
     transform: translate(0%, -5%);
     overflow: scroll;
     transition: 0.2s;
