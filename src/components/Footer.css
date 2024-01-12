@@ -1,13 +1,14 @@
 .Footer{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     background-color: darkgray;
 }
 
 .Footer-content{
     color: white;
-    text-align: left;
+    text-align: center;
     margin: 2em;
-    display: inline-block;
+    display: block;
     width: 40vw;
     height: auto;
 }
@@ -16,4 +17,19 @@
     color: white;
     background-color: transparent;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1040px) {
+    .Footer{
+        display: inline-block;
+        width: 100%;
+    }
+    .Footer-content{
+        color: white;
+        text-align: center;
+        margin: 2em;
+        display: block;
+        width: 100vw;
+        height: auto;
+    }
 }

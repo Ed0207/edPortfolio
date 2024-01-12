@@ -11,7 +11,7 @@ function Home(){
     return(
     <div className='Home'>
         <Navbar name="Edward's Portfolio" dynamic="true" ></Navbar>
-        <Hero id="section1" text="Work in progress... (~50% complete)"></Hero>
+        <Hero id="section1" text="Welcome"></Hero>
         <AboutMe id="section2" ></AboutMe>
         <ProjectCard id="section3" ></ProjectCard>
         <Footer ></Footer>
