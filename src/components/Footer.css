@@ -21,15 +21,15 @@
 
 @media screen and (max-width: 1040px) {
     .Footer{
-        display: inline-block;
-        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     .Footer-content{
         color: white;
         text-align: center;
         margin: 2em;
         display: block;
-        width: 100vw;
+        width: 85vw;
         height: auto;
     }
 }
