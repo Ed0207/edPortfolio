@@ -1,5 +1,5 @@
 import {React, useRef, useState} from 'react'
-import headshot from "./../assets/ed-selfie.jpg"
+import headshot from "./../assets/20250728_095600.jpg"
 import './AboutMe.css'
 import SetAnimation from './SetAnimation'
 import {FaArrowUp, FaArrowDown} from "react-icons/fa"
@@ -97,8 +97,8 @@ function AboutMe(props){
                             </div>
                             <div className='text-section'>
                                 <h4>Who are you?</h4>
-                                <p>My name is Chien An Chen, aka Edward, and I'm a junior software developer new to the industry!</p>
-                                <p>Graduated from SFU with BSc in Computing Science, I'm excited to start my junior in the field of technology and looking forward to learn and experience</p>
+                                <p>Name is Chien An Chen, but usually go with Edward! As of this moment, I'm a junior software developer looking for an opportunity</p>
+                                <p>Graduated from SFU with BSc in Computing Science in 2024, </p>
                                 <p></p>
                             </div>
                             <div className='text-section'>

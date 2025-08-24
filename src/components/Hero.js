@@ -3,14 +3,13 @@ import Typed from 'react-typed';
 import img1 from './../assets/pexels-luis-gomes-546819.jpg'
 import "./Hero.css"
 import SetAnimation from './SetAnimation';
-import animateBG from './../assets/pexels_videos_2278095 (1080p).mp4'
+import animateBG from './../assets/11274341-uhd_3840_2160_25fps.mp4'
 
 function MyHeader(props){
 
     // observer set element classes for CSS animation
     const divRef = useRef();
     SetAnimation(divRef);
-
 
     return (
         <div className='header-wraper' id="top">

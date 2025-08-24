@@ -2,7 +2,7 @@
     padding-top: 2vh;
     color: white;
     text-align: center;
-    background-color: darkgray;
+    background-color: rgb(205, 225, 235);
     height: 80vh;
 }
 
@@ -30,20 +30,21 @@
 
 .card{
     padding: 1vh 1vw;
-    background-color: black;
-    text-align: left;
-    width: 30vw;
+    background-color: rgb(160, 125, 28);
+    text-align: center;
+    width: 26vw;
     height: 40vh;
     box-shadow: gray 7px 7px;
     overflow: hidden;
 }
 
 .card:hover{
-    width: 40vw;
+    /* width: 40vw;
     height: 45vh;
     padding-top: 0;
-    transform: translate(0%, -5%);
-    overflow: scroll;
+    transform: translate(0%, -5%); */
+    /* overflow: scroll; */
+    background-color: rgb(114, 88, 16);
     transition: 0.2s;
 }
 

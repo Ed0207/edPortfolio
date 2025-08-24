@@ -3,7 +3,7 @@ import axios from 'axios';
 import "./ProjectCard.css"
 
 
-let PROJECTCOUNT = 5;
+let PROJECTCOUNT = 3;
 let CENTERCARD = 0;
 
 function repoSort(repos){
