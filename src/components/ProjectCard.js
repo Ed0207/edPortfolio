@@ -99,40 +99,36 @@ function ProjectCard(){
                     PROJECTCOUNT = repos.length
                 }
 
-                // new implementation (map)
-                
-                // let itemCount = 0;
-                // const mapString = repoMap.filter(item =>
-                //     (itemCount++ < PROJECTCOUNT)? true: false
-                // ).map(item =>
-                //     <a className='card' href={item.html_url}>
-                //             <div className='name'>Name: {item.name}</div>
-                //             <div className='language'>Language: {item.language}</div>
-                //             <div className='description'>Description: {item.description}</div>
-                //             <div className='lastPushed'>Last pushed at: {item.pushed_at.substring(0,10)}</div>
-                //      </a>
-                // )
 
-                // console.log("rendering repository item")
-                // console.log(mapString)
-
-                // setComponent(mapString)
-
-
-                // original implementation
                 // pushing render component
                 for(let i = 0; i < PROJECTCOUNT; i++){
                     if(Object.is(repos[i].language, null)){
-                        repos[i].language = "?"
+                        repos[i].language = "misc"
                     }
 
+                    let background = ""
+
+                    switch(repos[i].language){
+                        case "JavaScript": 
+                            background = "card misc js"
+                            break;
+                        case "C#":
+                            background = "card misc csharp"
+                            break;
+                        case "HTML":
+                            background = "card misc html"
+                            break;
+                        default:
+                            background = "card misc" 
+                            break;
+                    }
 
                     displayComponent.push(
-                        <a className='card' href={repos[i].html_url}>
-                            <div className='name'>Name:     {repos[i].name}</div>
-                            <div className='language'>Language:     {repos[i].language}</div>
-                            <div className='lastPushed'>Last pushed at:     {repos[i].pushed_at.substring(0,10)}</div>
-                            <div className='description'>Description:       {repos[i].description}</div>
+                        <a className={background} href={repos[i].html_url}>
+                            <div className='name'>project: {repos[i].name}</div>
+                            <div className='language'>language: {repos[i].language}</div>
+                            <div className='lastPushed'>date: {repos[i].pushed_at.substring(0,10)}</div>
+                            <div className='description'>desc: {repos[i].description}</div>
                         </a>
                     )
                 }

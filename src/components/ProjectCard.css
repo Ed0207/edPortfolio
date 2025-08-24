@@ -31,11 +31,31 @@
 .card{
     padding: 1vh 1vw;
     background-color: rgb(160, 125, 28);
-    text-align: center;
+    text-align: left;
     width: 26vw;
     height: 40vh;
     box-shadow: gray 7px 7px;
     overflow: hidden;
+}
+
+.card.misc{
+    background-image: url('../assets/computer.png');
+    background-position: center;
+    background-size: 50px 50px;
+    background-position: center 30vh;
+    background-repeat: no-repeat;
+}
+
+.card.misc.js{
+    background-image: url('../assets/java-script.png');
+}
+
+.card.misc.csharp{
+    background-image: url('../assets/csharp.png');
+}
+
+.card.misc.html{
+    background-image: url('../assets/html.png');
 }
 
 .card:hover{
@@ -51,6 +71,7 @@
 .name .language .description .lastPush{
     background-color: pink;
 }
+
 
 /*
 .card {
