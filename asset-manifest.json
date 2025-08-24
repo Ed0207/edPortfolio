@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/edPortfolio/static/css/main.b0022487.css",
-    "main.js": "/edPortfolio/static/js/main.5e83440c.js",
+    "main.css": "/edPortfolio/static/css/main.a2674c01.css",
+    "main.js": "/edPortfolio/static/js/main.092a6930.js",
     "static/media/11274341-uhd_3840_2160_25fps.mp4": "/edPortfolio/static/media/11274341-uhd_3840_2160_25fps.55e433466af249c474b5.mp4",
     "static/media/20250728_095600.jpg": "/edPortfolio/static/media/20250728_095600.996ef065ad0f3f5b67d5.jpg",
     "static/media/pexels-luis-gomes-546819.jpg": "/edPortfolio/static/media/pexels-luis-gomes-546819.f23a6b8adc863749130c.jpg",
+    "static/media/csharp.png": "/edPortfolio/static/media/csharp.4a32f53d425c7ad4cb05.png",
+    "static/media/computer.png": "/edPortfolio/static/media/computer.c29ef1f335e5f30001d8.png",
+    "static/media/java-script.png": "/edPortfolio/static/media/java-script.3dfb665e058d08c99f28.png",
     "index.html": "/edPortfolio/index.html",
-    "main.b0022487.css.map": "/edPortfolio/static/css/main.b0022487.css.map",
-    "main.5e83440c.js.map": "/edPortfolio/static/js/main.5e83440c.js.map"
+    "main.a2674c01.css.map": "/edPortfolio/static/css/main.a2674c01.css.map",
+    "main.092a6930.js.map": "/edPortfolio/static/js/main.092a6930.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0022487.css",
-    "static/js/main.5e83440c.js"
+    "static/css/main.a2674c01.css",
+    "static/js/main.092a6930.js"
   ]
 }
