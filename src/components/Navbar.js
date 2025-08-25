@@ -3,7 +3,7 @@ import "./Navbar.css"
 import { Link } from 'react-router-dom';
 import {Link as ScrollLink} from 'react-scroll';
 import {FaBars} from "react-icons/fa"
-import logo from "../assets/logo.png"
+import logo from "../assets/computer.png"
 
 function Navbar (props) {
 
