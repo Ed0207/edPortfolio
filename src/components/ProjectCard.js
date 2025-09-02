@@ -128,7 +128,7 @@ function ProjectCard(){
                             <div className='name'>project: {repos[i].name}</div>
                             <div className='language'>language: {repos[i].language}</div>
                             <div className='lastPushed'>date: {repos[i].pushed_at.substring(0,10)}</div>
-                            <div className='description'>desc: {repos[i].description}</div>
+                            {/* <div className='description'>desc: {repos[i].description}</div> */}
                         </a>
                     )
                 }

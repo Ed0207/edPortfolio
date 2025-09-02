@@ -3,7 +3,8 @@ import headshot from "./../assets/20250728_095600.jpg"
 import './AboutMe.css'
 import SetAnimation from './SetAnimation'
 import {FaArrowUp, FaArrowDown} from "react-icons/fa"
-
+import upArrow from "./../assets/arrow-up.png"
+import downArrow from "./../assets/arrow-down.png"  
 
 function AboutMe(props){
 
@@ -12,8 +13,6 @@ function AboutMe(props){
     let textBoxIndex = 0;
 
     // observer set element classes for CSS animation
-
-
     SetAnimation(divRef);
 
     // scroll to nearby text box content top
@@ -78,8 +77,8 @@ function AboutMe(props){
         textRef.current.scrollTo({
             top: targetOffset,
             left: 0,
-            behavior: "smooth",
-          });
+            behavior: "smooth",        
+        });
     }
 
 
@@ -112,6 +111,8 @@ function AboutMe(props){
                             </div>  
                         </div>
                         <div className='textBoxButton'>
+                            <image src={upArrow} alt="up arrow"></image>
+                            <image src={downArrow} alt="up arrow"></image>
                             <FaArrowUp onClick={((e) => clickHandler(-1))}></FaArrowUp>
                             <FaArrowDown onClick={((e) => clickHandler(1))}></FaArrowDown>
                         </div>

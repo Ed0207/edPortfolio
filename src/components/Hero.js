@@ -1,6 +1,5 @@
 import {React, useRef} from 'react';
 import Typed from 'react-typed';
-import img1 from './../assets/pexels-luis-gomes-546819.jpg'
 import "./Hero.css"
 import SetAnimation from './SetAnimation';
 import animateBG from './../assets/11274341-uhd_3840_2160_25fps.mp4'

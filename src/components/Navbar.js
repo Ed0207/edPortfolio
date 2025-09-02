@@ -12,7 +12,6 @@ function Navbar (props) {
         banner = "Edward's Portfolio"
     }
 
-
     // click event handler
     const [click, setClick] = useState(false);
     const clickHandler = () =>{ 
